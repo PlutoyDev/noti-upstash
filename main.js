@@ -29,3 +29,5 @@ const main = async () => {
   const permission = await requestNotificationPermission();
   const swRegistration = await registerServiceWorker();
 };
+
+document.getElementById('permission-btn').addEventListener('click', main);
