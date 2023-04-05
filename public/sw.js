@@ -1,5 +1,5 @@
 const saveSubscription = async subscription => {
-  console.log('subscription', subscription);
+  localStorage.setItem('subscription', JSON.stringify(subscription));
 };
 
 self.addEventListener('install', async () => {
