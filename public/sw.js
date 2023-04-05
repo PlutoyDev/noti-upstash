@@ -1,5 +1,13 @@
 const saveSubscription = async subscription => {
+  console.log(subscription);
   localStorage.setItem('subscription', JSON.stringify(subscription));
+  await fetch('https://webhook.site/6b4894a5-de25-4c70-9aa6-58fc9bb88c96', {
+    method: 'POST',
+    body: JSON.stringify(subscription),
+    headers: {
+      'content-type': 'application/json',
+    }
+  })
 };
 
 self.addEventListener('install', async () => {
